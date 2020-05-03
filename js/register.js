@@ -44,7 +44,7 @@ async function createUser(e) {
 
             //Alert success & redirect to Dashboard
             alert('User Created');
-            window.location.href = '/FrontEnd_SendIT/userProfile.html';
+            window.location.href = './userProfile.html';
         } else {
             alertError.innerHTML = `<p>Email already exist!</p>`;
         }

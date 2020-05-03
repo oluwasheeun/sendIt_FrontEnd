@@ -116,7 +116,7 @@ const logout = document.getElementById('logout');
 logout.addEventListener('click', () => {
     localStorage.clear();
 
-    window.location.href = '/FrontEnd_SendIT/login.html';
+    window.location.href = './login.html';
 });
 
 // //Decode JWT

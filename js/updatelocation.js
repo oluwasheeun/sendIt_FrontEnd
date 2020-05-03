@@ -31,9 +31,7 @@ async function Location(e) {
             ).innerHTML = `<h1 class="m-heading">Location Updated</h1>`;
 
             setTimeout(
-                () =>
-                    (window.location.href =
-                        '/FrontEnd_SendIT/userProfile.html'),
+                () => (window.location.href = './userProfile.html'),
                 2000
             );
         } else {
@@ -50,5 +48,5 @@ async function Location(e) {
 //Logout User
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.clear();
-    window.location.href = '/FrontEnd_SendIT/login.html';
+    window.location.href = './login.html';
 });
