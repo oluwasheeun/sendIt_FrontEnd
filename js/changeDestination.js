@@ -10,7 +10,7 @@ async function newDestinations(e) {
 
     try {
         const res = await fetch(
-            `http://localhost:3000/parcels/${parcelId}/destination`,
+            `https://obscure-springs-34125.herokuapp.com/parcels/${parcelId}/destination`,
             {
                 method: 'PUT',
                 headers: {
@@ -34,7 +34,7 @@ async function newDestinations(e) {
                     (window.location.href =
                         '/FrontEnd_SendIT/userProfile.html'),
                 2000
-            ); 
+            );
         } else {
             document.querySelector(
                 '.form-box'

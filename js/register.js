@@ -21,17 +21,20 @@ async function createUser(e) {
         lastName: lastName.value,
         email: email.value,
         phone: phone.value,
-        password: password.value, 
+        password: password.value,
     };
 
     try {
-        const res = await fetch('http://localhost:3000/auth/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(sendBody),
-        });
+        const res = await fetch(
+            'https://obscure-springs-34125.herokuapp.com/auth/register',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(sendBody),
+            }
+        );
 
         const data = await res.json();
 

@@ -17,14 +17,17 @@ async function createOrder(e) {
     const token = localStorage.getItem('jwt');
 
     try {
-        const res = await fetch('http://localhost:3000/parcels', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(Order),
-        });
+        const res = await fetch(
+            'https://obscure-springs-34125.herokuapp.com/parcels',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(Order),
+            }
+        );
 
         const data = await res.json();
 

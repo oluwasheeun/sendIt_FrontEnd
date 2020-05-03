@@ -13,13 +13,16 @@ const token = localStorage.getItem('jwt');
 //Get logged-In User details
 async function getMe() {
     try {
-        const res = await fetch('http://localhost:3000/auth/me', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                authorization: `Bearer ${token}`,
-            },
-        });
+        const res = await fetch(
+            'https://obscure-springs-34125.herokuapp.com/auth/me',
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${token}`,
+                },
+            }
+        );
         const data = await res.json();
 
         //Save User details to Local Storage
@@ -42,13 +45,16 @@ async function getMe() {
 
             //fetch all orders for admin
             try {
-                const res = await fetch('http://localhost:3000/parcels', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        authorization: `Bearer ${token}`,
-                    },
-                });
+                const res = await fetch(
+                    'https://obscure-springs-34125.herokuapp.com/parcels',
+                    {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
 
                 const data = await res.json();
 
@@ -64,7 +70,7 @@ async function getMe() {
 
             try {
                 const res = await fetch(
-                    `http://localhost:3000/users/${userId}/parcels`,
+                    `https://obscure-springs-34125.herokuapp.com/users/${userId}/parcels`,
                     {
                         method: 'GET',
                         headers: {

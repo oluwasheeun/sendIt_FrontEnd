@@ -8,7 +8,7 @@ async function cancel(e) {
 
     try {
         const res = await fetch(
-            `http://localhost:3000/parcels/${parcelId}/cancel`,
+            `https://obscure-springs-34125.herokuapp.com/parcels/${parcelId}/cancel`,
             {
                 method: 'PUT',
                 headers: {

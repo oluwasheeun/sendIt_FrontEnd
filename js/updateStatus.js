@@ -12,7 +12,7 @@ async function status(e) {
 
     try {
         const res = await fetch(
-            `http://localhost:3000/parcels/${parcelId}/status`,
+            `https://obscure-springs-34125.herokuapp.com/parcels/${parcelId}/status`,
             {
                 method: 'PUT',
                 headers: {

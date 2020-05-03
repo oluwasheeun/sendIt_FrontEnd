@@ -13,14 +13,17 @@ async function login(e) {
     };
 
     try {
-        const res = await fetch('http://localhost:3000/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+        const res = await fetch(
+            'https://obscure-springs-34125.herokuapp.com/auth/login',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
 
-            body: JSON.stringify(sendBody),
-        });
+                body: JSON.stringify(sendBody),
+            }
+        );
 
         const data = await res.json();
 
