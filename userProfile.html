@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>SendIT | User Profile</title>
+    </head>
+    <body>
+        <nav id="navbar">
+            <!-- Navbar -->
+            <h1 class="logo">Send<a href="index.html"><span class="it-logo">IT</span></a></h1>
+            <ul>
+              <li><a href="userProfile.html">Dashboard</a></li>
+              <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+        </nav>
+        
+        <section id="UserProfile">
+          <div class="container">
+            <div class="user">
+              <div class="profile">
+                <h1 class="m-heading text-center">Welcome <span class="text-primary welcome-name"></span></h1>
+                <!-- order links -->
+                <div class="order-links">
+                  <ul>
+                    <li class="createOrder"><a href="createOrder.html" class="btn text-center" >Create Order</a></li>
+                    <li class="cancelOrder"><a href="cancelOrder.html" class="btn text-center" >Cancel Order</a></li>
+                    <li class="changeDestination"><a href="changeDestination.html" class="btn text-center" >Change Destination</a></li>
+                    <li class="updateStatus"><a href="updateStatus.html" class="btn text-center" >Update Staus</a></li>
+                    <li class="updateLocation"><a href="updateLocation.html" class="btn text-center" >Update Location</a></li>
+                  </ul>
+                </div>
+  
+                <!-- Order details -->
+                <div class="order-details">
+                  <p>Number of Orders: <span class="no1" style="color:red; font-weight: bold">0</span></p>
+                  <p>Orders In-Transit: <span class="no2" style="color:red; font-weight: bold">0</span></p>
+                  <p>Orders Delivered: <span class="no3" style="color:red; font-weight: bold">0</span></p>
+                  <p>Orders Cancelled: <span class="no4" style="color:red; font-weight: bold">0</span></p>
+                </div>
+  
+              </div>
+  
+              <div class="orders">
+                <table class="orders-table">
+                  <thead>
+                    <tr>
+                      <th>Parcel ID</th>
+                      <th>Pickup Location</th>
+                      <th>Destination</th>
+                      <th>Recipient Name</th>
+                      <th>Recipient Phone Number</th>
+                      <th>Current Location</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list-orders"></tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- footer -->
+        <footer id="main-footer" class="bg-dark text-center py-1">
+            <div class="container">
+                <p>Copyright &copy; 2020, SendIT, All Rights Reserved</p>
+            </div>
+        </footer>
+        <script src="js/dashboard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    /* overflow: hidden; */
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0.75rem 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.bg-primary {
+    background: #ee813d;
+    color: #fff;
+}
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark {
+    background: #333;
+    color: #fff;
+}
+
+.l-heading {
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.m-heading {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: #ee813d;
+}
+
+.py-1 {
+    padding: 1.5rem 0;
+}
+.py-2 {
+    padding: 2rem 0;
+}
+.py-3 {
+    padding: 3rem 0;
+}
+
+.p-1 {
+    padding: 1.5rem;
+}
+.p-2 {
+    padding: 2rem;
+}
+.p-3 {
+    padding: 3rem;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #ee813d;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(238, 129, 61, 0.85);
+}
+
+.no-display {
+    display: none;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    background: #333;
+    color: #ee813d;
+    justify-content: space-between;
+    padding: 1rem;
+
+    /* sticky navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: #fff;
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+    background: #ee813d;
+    border-radius: 5px;
+}
+
+#navbar ul li a.current {
+    text-decoration: underline;
+}
+
+.it-logo {
+    color: #fff;
+    background: #ee813d;
+    padding: 0.2rem;
+    border-radius: 50%;
+    /* font-size: 1.2rem; */
+}
+
+/* showcase */
+#showcase {
+    background: #333 url('../img/man-carrying-sack-near-white-wall-1267341.jpg')
+        no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+}
+
+#showcase .showcase-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    /* overlay */
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Aboutus*/
+#aboutus {
+    display: flex;
+    height: 400px;
+    max-height: 500px;
+}
+
+#aboutus div {
+    flex: 1;
+}
+
+#aboutus .about-img {
+    background: url('../img/person-using-forklift-1267338.png') no-repeat center
+        center/cover;
+}
+
+#aboutus .about-text {
+    overflow: scroll;
+}
+
+#aboutus .about-text p {
+    text-align: justify;
+}
+
+/* contact */
+#contact {
+    display: flex;
+}
+
+#contact .map,
+#contact .contact-form {
+    flex: 1;
+}
+
+#contact .contact-form .form-group {
+    margin: 0.75rem;
+}
+
+#contact .contact-form label {
+    display: block;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: #ddd 1px solid;
+}
+
+#contact .contact-form .send-btn {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.65rem;
+    font-size: 1rem;
+    outline: none;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* signup and login*/
+#signup,
+#login,
+#UserProfile {
+    background: rgb(180, 179, 179) url('../img/businessman-2108029_1920.jpg')
+        no-repeat center center/cover;
+    height: 86vh;
+}
+
+#signup .container,
+#login .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#signup .form-box,
+#login .form-box {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 2rem;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 3px 3px 3px #ee813d;
+}
+
+#signup .form-box label,
+#login .form-box label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    color: #666;
+}
+
+#signup .form-box input,
+#login .form-box input {
+    width: 100%;
+    padding: 0.65rem;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+}
+
+#signup .form-box input:focus,
+#login .form-box input:focus {
+    outline: none;
+    border-color: #ee813d;
+}
+
+#signup .form-box .register-btn,
+#login .form-box .register-btn {
+    width: 100%;
+    margin: 1.2rem 0;
+    padding: 0.65rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+#signup .form-box .terms {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+#signup .form-box p a {
+    color: blue;
+}
+
+#signup .form-box .login {
+    padding-top: 1rem;
+}
+
+.Error {
+    font-size: 1rem;
+    color: red;
+}
+
+/* User Profile */
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user .profile {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #fff;
+    color: #333;
+}
+
+.order-links ul {
+    list-style: none;
+}
+
+.order-links .btn {
+    display: inline-block;
+    background: #ee813d;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+/* .order-links ul li.hide{
+    display: none;
+} */
+
+.order-links ul li a {
+    width: 100%;
+    color: #333;
+}
+
+.order-details {
+    margin-top: 3rem;
+    line-height: 1;
+}
+
+.user .orders {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #fff;
+    color: #333;
+    overflow: scroll;
+}
+
+.orders-table {
+    border-collapse: collapse;
+    border-radius: 5px 5px 0 0;
+    border: #ddd 1px solid;
+}
+
+.orders-table thead tr {
+    background-color: #ee813d;
+    text-align: left;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.8rem;
+}
+
+.orders-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.orders-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
