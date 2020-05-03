@@ -4,37 +4,56 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>SendIT | Upade Parcel Status </title>
+        <link
+            rel="stylesheet"
+            media="screen and (max-width: 768px)"
+            href="css/mobile.css"
+        />
+        <title>SendIT | Upade Parcel Status</title>
     </head>
     <body>
-      <nav id="navbar">
-        <!-- Navbar -->
-        <h1 class="logo">Send<span class="it-logo">IT</span></h1>
-        <ul>
-          <li><a href="userProfile.html"">Dashboard</a></li>
-          <li><a id="logout" href="#">Logout</a></li>
-        </ul>
-      </nav>
+        <nav id="navbar">
+            <!-- Navbar -->
+            <h1 class="logo">Send<span class="it-logo">IT</span></h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="userProfile.html">Dashboard</a></li>
+                <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+        </nav>
         <!-- Register -->
         <section id="signup">
             <div class="container">
-            <div class="form-box text-center">
-                <h1 class="m-heading"><span class="text-primary">Update</span> Location</h1>
-                <form id="update-location">
-                    <div class="form-group">
-                        <label for="parcel-id">Parcel ID</label>
-                        <input type="text" name="parcel-id" id="parcel-id" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="new-location">New Location</label>
-                        <input type="text" name="new-location" id="new-location" required/>
-                    </div>
+                <div class="form-box text-center">
+                    <h1 class="m-heading">
+                        <span class="text-primary">Update</span> Location
+                    </h1>
+                    <form id="update-location">
+                        <div class="form-group">
+                            <label for="parcel-id">Parcel ID</label>
+                            <input
+                                type="text"
+                                name="parcel-id"
+                                id="parcel-id"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="new-location">New Location</label>
+                            <input
+                                type="text"
+                                name="new-location"
+                                id="new-location"
+                                required
+                            />
+                        </div>
 
-                    <button type="submit" class="btn register-btn">Update Location</button>
-                    
-                </form>
+                        <button type="submit" class="btn register-btn">
+                            Update Location
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
         </section>
 
         <!-- footer -->

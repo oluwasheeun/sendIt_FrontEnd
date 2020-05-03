@@ -18,6 +18,7 @@ p {
     margin: 0.75rem 0;
 }
 
+/* Utility Classes */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -350,6 +351,7 @@ p {
 .order-details {
     margin-top: 3rem;
     line-height: 1;
+    font-size: 0.9rem;
 }
 
 .user .orders {
