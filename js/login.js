@@ -37,9 +37,7 @@ async function login(e) {
             ).innerHTML = `<h1 class="m-heading">Loading Profile.......</h1>`;
 
             setTimeout(
-                () =>
-                    (window.location.href =
-                        '/FrontEnd_SendIT/userProfile.html'),
+                () => (window.location.href = './userProfile.html'),
                 2000
             );
         } else {
