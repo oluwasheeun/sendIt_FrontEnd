@@ -24,6 +24,11 @@ p {
     margin: auto;
     padding: 0 2rem;
 }
+.container-2 {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 2rem;
+}
 
 .bg-primary {
     background: #ee813d;
@@ -50,9 +55,17 @@ p {
     margin-bottom: 0.75rem;
     line-height: 1.1;
 }
+.s-heading {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
 
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .text-primary {
@@ -271,6 +284,7 @@ p {
 }
 
 #signup .form-box input,
+#signup .form-box textarea,
 #login .form-box input {
     width: 100%;
     padding: 0.65rem;
@@ -279,6 +293,7 @@ p {
 }
 
 #signup .form-box input:focus,
+#signup .form-box textarea:focus,
 #login .form-box input:focus {
     outline: none;
     border-color: #ee813d;
@@ -291,6 +306,22 @@ p {
     padding: 0.65rem;
     font-size: 1rem;
     outline: none;
+}
+
+#signup .form-box .back-btn,
+#login .form-box .back-btn {
+    margin: 0.8rem 0;
+    background-color: rgb(58, 57, 57);
+    color: #ddd;
+}
+
+#signup .form-box .back,
+#login .form-box .back {
+    background-color: rgb(58, 57, 57);
+    color: #ddd;
+    padding: 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 #signup .form-box .terms {

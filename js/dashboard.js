@@ -102,7 +102,8 @@ if (localStorage.getItem('jwt') === null) {
 
         getOrders().then((data) => {
             data.map((i) => {
-                orders.innerHTML += `<tr><td>${i._id}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td>${i.recipientName}</td><td>${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td></tr>`;
+                orders.innerHTML += `<tr><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td>${i.recipientName}</td><td>${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
+                <td><button class="btn">Edit</button></td><td><button class="btn">Cancel</button></td></tr>`;
             });
 
             numberOfOrders.textContent = data.length;

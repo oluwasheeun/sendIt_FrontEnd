@@ -2,7 +2,8 @@
 if (localStorage.getItem('jwt') === null) {
     window.location.href = './login.html';
 } else {
-    const createOrderForm = document.getElementById('create-order-form');
+    const createOrderForm = document.querySelector('form');
+    const itemDescription = document.getElementById('description');
     const pickupLocation = document.getElementById('pickup-location');
     const destination = document.getElementById('destination');
     const recipientName = document.getElementById('recipient-name');
@@ -11,7 +12,11 @@ if (localStorage.getItem('jwt') === null) {
     async function createOrder(e) {
         e.preventDefault();
 
+        //Disable submit button
+        createOrderForm.querySelector('input[type="submit"]').disabled = true;
+
         const Order = {
+            itemDescription: itemDescription.value,
             pickupLocation: pickupLocation.value,
             destination: destination.value,
             recipientName: recipientName.value,
@@ -49,7 +54,16 @@ if (localStorage.getItem('jwt') === null) {
             return err.message;
         }
     }
+
     createOrderForm.addEventListener('submit', createOrder);
+
+    //Go back to previous page
+    document.querySelector('.back').addEventListener('click', back);
+    document.querySelector('.back-btn').addEventListener('click', back);
+
+    function back() {
+        window.history.back();
+    }
 
     //Logout User
     const logout = document.getElementById('logout');

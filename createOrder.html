@@ -25,6 +25,9 @@
         <section id="signup">
             <div class="container">
                 <div class="form-box text-center">
+                    <div class="s-heading text-right">
+                        <span class="back"> X </span>
+                    </div>
                     <h1 class="m-heading">
                         <span class="text-primary">Create</span> Order
                     </h1>
@@ -32,7 +35,14 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Nobis, alias.
                     </p>
-                    <form id="create-order-form">
+                    <form id="create-order-form" >
+                        <div class="form-group">
+                            <label for="description">Item Description</label>
+                            <textarea
+                                name="description"
+                                id="description"
+                                required></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="pickup-location">Pickup Location</label>
                             <input
@@ -68,13 +78,15 @@
                                 type="tel"
                                 name="recipient-phone"
                                 id="recipient-phone"
-                                pattern="[0-9]{11}"
-                                required
-                            />
+                                pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$" 
+                        required/>
+                        <span class="validity">Format: +1234....</span>
                         </div>
 
-                        <button type="submit" class="btn register-btn">
-                            Create Order
+                        <input type="submit" name="myButton" value="Create Order" class="btn register-btn"> 
+                        </input>
+                        <button class="btn register-btn back-btn">
+                            Go Back to Dashboard
                         </button>
                     </form>
                 </div>
