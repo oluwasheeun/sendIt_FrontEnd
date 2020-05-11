@@ -45,12 +45,12 @@ if (localStorage.getItem('jwt') === null) {
                 document
                     .querySelector('.createOrder')
                     .classList.add('no-display');
-                document
-                    .querySelector('.cancelOrder')
-                    .classList.add('no-display');
-                document
-                    .querySelector('.changeDestination')
-                    .classList.add('no-display');
+                // document
+                //     .querySelector('.cancelOrder')
+                //     .classList.add('no-display');
+                // document
+                //     .querySelector('.changeDestination')
+                //     .classList.add('no-display');
 
                 //fetch all orders for admin
                 try {
@@ -72,12 +72,12 @@ if (localStorage.getItem('jwt') === null) {
                     console.log(err.message);
                 }
             } else {
-                document
-                    .querySelector('.updateStatus')
-                    .classList.add('no-display');
-                document
-                    .querySelector('.updateLocation')
-                    .classList.add('no-display');
+                document;
+                //     .querySelector('.updateStatus')
+                //     .classList.add('no-display');
+                // document
+                //     .querySelector('.updateLocation')
+                //     .classList.add('no-display');
 
                 try {
                     const res = await fetch(
@@ -103,7 +103,7 @@ if (localStorage.getItem('jwt') === null) {
         getOrders().then((data) => {
             data.map((i) => {
                 orders.innerHTML += `<tr><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td>${i.recipientName}</td><td>${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
-                <td><button class="btn">Edit</button></td><td><button class="btn">Cancel</button></td></tr>`;
+                <td><i class="fas fa-edit"></i></td><td><i class="far fa-trash-alt"></i></td></tr>`;
             });
 
             numberOfOrders.textContent = data.length;
