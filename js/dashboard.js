@@ -43,6 +43,9 @@ if (localStorage.getItem('jwt') === null) {
 
             if (userRole === 'admin') {
                 document
+                    .querySelector('.createOrder')
+                    .classList.add('no-display');
+                document
                     .querySelector('.cancelOrder')
                     .classList.add('no-display');
                 document
