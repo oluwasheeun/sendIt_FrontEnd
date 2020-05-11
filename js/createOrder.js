@@ -16,7 +16,7 @@ if (localStorage.getItem('jwt') === null) {
         createOrderForm.querySelector('input[type="submit"]').disabled = true;
 
         const Order = {
-            itemDescription: itemDescription.value,
+            description: itemDescription.value,
             pickupLocation: pickupLocation.value,
             destination: destination.value,
             recipientName: recipientName.value,
