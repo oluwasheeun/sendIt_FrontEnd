@@ -46,7 +46,10 @@ async function createUser(e) {
             alert('User Created');
             window.location.href = './userProfile.html';
         } else {
-            alertError.innerHTML = `<p>Email already exist!</p>`;
+            alertError.innerHTML = data.message;
+            setTimeout(() => {
+                alertError.innerHTML = '';
+            }, 3000);
         }
     } catch (err) {
         alert(err.message);

@@ -306,9 +306,32 @@ p {
     padding-top: 1rem;
 }
 
+span.validity {
+    display: block;
+    color: #666;
+    font-size: 0.7rem;
+    padding-top: 0.2rem;
+    padding-left: 0.3rem;
+    text-align: left;
+}
+
+input[type='tel']:invalid + span:after {
+    content: 'x';
+    font-size: 1rem;
+    color: red;
+    padding-left: 0.3rem;
+}
+input[type='tel']:valid + span:after {
+    content: '✓';
+    font-size: 1rem;
+    color: #26b72b;
+    padding-left: 0.3rem;
+}
+
 .Error {
     font-size: 1rem;
     color: red;
+    padding-top: 0.5rem;
 }
 
 /* User Profile */

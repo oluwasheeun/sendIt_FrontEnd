@@ -45,11 +45,14 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone No.</label>
-                        <input type="tel" name="phone" id="phone" pattern="[0-9]{11}" placeholder="Enter Phone Number" required/>
+                        <input type="tel" name="phone" id="phone" 
+                        pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$" 
+                        placeholder="Enter Phone Number" required/>
+                        <span class="validity">Format: +1234....</span>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" autocomplete="new-password" placeholder="Enter Password"required/>
+                        <input type="password" name="password" id="password" autocomplete="new-password" min="8" placeholder="Enter Password"required/>
                     </div>
                     <div class="form-group">
                         <label for="confirm-password">Confirm Password</label>
