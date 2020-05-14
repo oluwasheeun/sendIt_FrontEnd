@@ -416,6 +416,27 @@ input[type='tel']:valid + span:after {
     overflow: scroll;
 }
 
+.filter {
+    margin-bottom: 1rem;
+}
+.filter input {
+    width: 30%;
+    padding: 0.3rem;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+}
+
+.filter select {
+    font-size: 1.01rem;
+    color: #666;
+}
+
+.filter input:focus,
+.filter select:focus {
+    outline: none;
+    border-color: #ee813d;
+}
+
 .orders-table {
     border-collapse: collapse;
     border-radius: 5px 5px 0 0;
