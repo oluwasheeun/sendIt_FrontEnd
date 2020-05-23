@@ -10,6 +10,7 @@
         media="screen and (max-width: 768px)"
         href="css/mobile.css"
     />
+      <link rel="stylesheet" href="css/modal.css">
         <title>SendIT | User Profile</title>
     </head>
     <body>
@@ -44,7 +45,7 @@
                   <p>Number of Orders: <span class="no1" style="color:red; font-weight: bold">0</span></p>
                   <p>Orders In-Transit: <span class="no2" style="color:red; font-weight: bold">0</span></p>
                   <p>Orders Delivered: <span class="no3" style="color:red; font-weight: bold">0</span></p>
-                  <p>Orders Cancelled: <span class="no4" style="color:red; font-weight: bold">0</span></p>
+                  <!-- <p>Orders Cancelled: <span class="no4" style="color:red; font-weight: bold">0</span></p> -->
                 </div>
   
               </div>
@@ -54,9 +55,10 @@
                   <input type="search" name="filter" id="filter" data-table="orders-table" placeholder="filter">
 
                   <select type="search" class="select-table-filter" data-table="order-table">
-                    <option value="">In-Transit</option>  
-                    <option value="Doe">Delivered</option>  
-                    <option value="Vanda">Cancelled</option>  
+                    <option value="">Reset</option>  
+                    <option value="In-Transit">In-Transit</option>  
+                    <option value="Delivered">Delivered</option>  
+                    <!-- <option value="Cancelled">Cancelled</option>   -->
                   <select>
                 </div>
                 <table class="orders-table">
@@ -80,6 +82,61 @@
         </div>
         </section>
 
+        <!-- Modal -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+
+              <span class="close-btn">&times;</span>
+
+              <div class="m-content">
+                <!-- Change Destination -->
+                <div class="destination">
+                  <h1 class="s-heading">
+                    <span class="text-primary">Change Destination</span>
+                  </h1>
+                  <form id="change-destination">
+                    <div class="form-group">
+                      <label for="new-destination">New Destination:</label>
+                      <input type="text" name="new-destination" id="new-destination" required/>
+                    </div>
+                    <button type="submit" class="btn ">Change Destination</button>
+                  </form>
+                </div>
+  
+                <!-- Change Location -->
+                <div class="location">
+                  <h1 class="s-heading">
+                    <span>Update </span>Location
+                  </h1>
+                    <form id="update-location">
+                      <div class="form-group">
+                        <label for="new-location">Current Location:</label>
+                        <input type="text" name="new-location" id="new-location" required/>
+                      </div>
+                      <button type="submit" class="btn ">Change Location</button>
+                    </form>
+                </div>
+
+                <!-- Update Status -->
+                <div class="u-status">
+                  <h1 class="s-heading">
+                    <span class="text-primary">Update Status</span>
+                  </h1>
+                    <form id="update-status">
+                      <div class="form-group">
+                        <label for="new-status">Current Status:</label>
+                        <input type="text" name="new-status" id="new-status" required/>
+                      </div>
+                      <button type="submit" class="btn ">Update Status</button>
+                    </form>
+                </div>
+              </div>
+
+              <div class="modal-footer text-center">
+                <button type="button" class="btn btn-secondary close-btn-2" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        </div>
         <!-- footer -->
         <footer id="main-footer" class="bg-dark text-center py-1">
             <div class="container">
