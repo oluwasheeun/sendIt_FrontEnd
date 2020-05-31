@@ -52,10 +52,10 @@
   
               <div class="orders">
                 <div class="filter text-center">
-                  <input type="search" name="filter" id="filter" data-table="orders-table" placeholder="filter">
+                  <input type="search" name="filter" id="filter" placeholder="Search recipient name or phone number">
 
-                  <select type="search" class="select-table-filter" data-table="order-table">
-                    <option value="">Reset</option>  
+                  <select id="select-filter">
+                    <option value="Reset" selected>Reset</option>   
                     <option value="In-Transit">In-Transit</option>  
                     <option value="Delivered">Delivered</option>  
                     <!-- <option value="Cancelled">Cancelled</option>   -->
@@ -71,6 +71,8 @@
                       <th>Recipient Phone Number</th>
                       <th>Current Location</th>
                       <th>Status</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody class="list-orders"></tbody>

@@ -9,7 +9,6 @@ if (localStorage.getItem('jwt') === null) {
   const numberOfOrders = document.querySelector('.order-details .no1');
   const ordersInTransit = document.querySelector('.order-details .no2');
   const ordersDelivered = document.querySelector('.order-details .no3');
-  //   const ordersCanceled = document.querySelector('.order-details .no4');
 
   //Get token from local storage
   const token = localStorage.getItem('jwt');
@@ -43,12 +42,6 @@ if (localStorage.getItem('jwt') === null) {
 
       if (userRole === 'admin') {
         document.querySelector('.createOrder').classList.add('no-display');
-        // document
-        //     .querySelector('.cancelOrder')
-        //     .classList.add('no-display');
-        // document
-        //     .querySelector('.changeDestination')
-        //     .classList.add('no-display');
 
         //fetch all orders for admin
         try {
@@ -70,12 +63,7 @@ if (localStorage.getItem('jwt') === null) {
           console.log(err.message);
         }
       } else {
-        document;
-        //     .querySelector('.updateStatus')
-        //     .classList.add('no-display');
-        // document
-        //     .querySelector('.updateLocation')
-        //     .classList.add('no-display');
+        document.querySelector('.filter').classList.add('no-display');
 
         try {
           const res = await fetch(
@@ -100,8 +88,8 @@ if (localStorage.getItem('jwt') === null) {
 
     getOrders().then((data) => {
       data.map((i) => {
-        orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td>${i.recipientName}</td><td>${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
-                <td><i class="fas fa-edit editOrder"></i></td><td><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
+        orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td class="rName">${i.recipientName}</td><td class="rPhone">${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
+                <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
       });
 
       numberOfOrders.textContent = data.length;
@@ -111,24 +99,67 @@ if (localStorage.getItem('jwt') === null) {
       ordersDelivered.textContent = data.filter(
         (i) => i.status === 'Delivered'
       ).length;
-      //   ordersCanceled.textContent = data.filter(
-      //     (i) => i.status === 'Cancelled'
-      //   ).length;
 
       //Delete Order
       document
         .querySelector('.list-orders')
         .addEventListener('click', function (e) {
           if (e.target.classList.contains('deleteOrder')) {
-            const parcelId =
-              e.target.parentElement.parentElement.firstChild.textContent;
-            cancel(parcelId);
-            e.target.parentElement.parentElement.remove();
+            const r = confirm(
+              'You are about to delete an order! Do you want to proceed?'
+            );
+            if (r == true) {
+              const parcelId =
+                e.target.parentElement.parentElement.firstChild.textContent;
+              cancel(parcelId);
+              e.target.parentElement.parentElement.remove();
+            }
           }
         });
     });
 
     welcome.textContent = localStorage.getItem('firstName');
+
+    //Select Dropdown Filter
+    const selectFilter = document.getElementById('select-filter');
+    selectFilter.addEventListener('change', () => {
+      orders.innerHTML = '';
+      if (
+        selectFilter.value === 'In-Transit' ||
+        selectFilter.value === 'Delivered'
+      ) {
+        getOrders().then((data) => {
+          data
+            .filter((i) => i.status === selectFilter.value)
+            .map((i) => {
+              orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td class="rName">${i.recipientName}</td><td class="rPhone">${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
+                    <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
+            });
+        });
+      } else {
+        getOrders().then((data) => {
+          data.map((i) => {
+            orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td class="rName">${i.recipientName}</td><td class="rPhone">${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
+                    <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
+          });
+        });
+      }
+    });
+
+    //Search Filter
+    // const searchInput = document.getElementById('filter');
+    // searchInput.addEventListener('submit', () => {
+    //   const rName = [...document.querySelectorAll('.rName')].map(
+    //     (name) => name.innerText
+    //   );
+    //   const rPhone = [...document.querySelectorAll('.rPhone')].map(
+    //     (phone) => phone.innerText
+    //   );
+
+    //   console.log(rName);
+    //   console.log(rName.includes(searchInput.value));
+
+    // });
   }
 
   getMe();
