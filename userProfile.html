@@ -20,7 +20,7 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="userProfile.html">Dashboard</a></li>
-              <li><a id="logout" href="#">Logout</a></li>
+              <li><a id="logout" href="#">Logout</a></li> 
             </ul>
         </nav>
         
@@ -127,7 +127,10 @@
                     <form id="update-status">
                       <div class="form-group">
                         <label for="new-status">Current Status:</label>
-                        <input type="text" name="new-status" id="new-status" required/>
+                        <select id="new-status">  
+                          <option value="In-Transit">In-Transit</option>  
+                          <option value="Delivered">Delivered</option>  
+                        <select>
                       </div>
                       <button type="submit" class="btn ">Update Status</button>
                     </form>

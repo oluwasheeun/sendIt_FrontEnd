@@ -87,10 +87,7 @@ if (localStorage.getItem('jwt') === null) {
     }
 
     getOrders().then((data) => {
-      data.map((i) => {
-        orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td class="rName">${i.recipientName}</td><td class="rPhone">${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
-                <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
-      });
+      data.map((i) => orderDisplay(i));
 
       numberOfOrders.textContent = data.length;
       ordersInTransit.textContent = data.filter(
@@ -131,38 +128,60 @@ if (localStorage.getItem('jwt') === null) {
         getOrders().then((data) => {
           data
             .filter((i) => i.status === selectFilter.value)
-            .map((i) => {
-              orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td class="rName">${i.recipientName}</td><td class="rPhone">${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
-                    <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
-            });
+            .map((i) => orderDisplay(i));
         });
       } else {
         getOrders().then((data) => {
-          data.map((i) => {
-            orders.innerHTML += `<tr><td class="no-display">${i._id}</td><td>${i.description}</td><td>${i.pickupLocation}</td><td>${i.destination}</td><td class="rName">${i.recipientName}</td><td class="rPhone">${i.phone}</td><td>${i.presentLocation}</td><td>${i.status}</td>
-                    <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
-          });
+          data.map((i) => orderDisplay(i));
         });
       }
     });
 
     //Search Filter
-    // const searchInput = document.getElementById('filter');
-    // searchInput.addEventListener('submit', () => {
-    //   const rName = [...document.querySelectorAll('.rName')].map(
-    //     (name) => name.innerText
-    //   );
-    //   const rPhone = [...document.querySelectorAll('.rPhone')].map(
-    //     (phone) => phone.innerText
-    //   );
+    const searchInput = document.getElementById('filter');
+    searchInput.addEventListener('change', searching);
+    searchInput.addEventListener('keyup', searching);
 
-    //   console.log(rName);
-    //   console.log(rName.includes(searchInput.value));
+    function searching() {
+      const term = searchInput.value;
+      const rName = [...document.querySelectorAll('.rName')].map(
+        (name) => name.innerText
+      );
+      const rPhone = [...document.querySelectorAll('.rPhone')].map(
+        (phone) => phone.innerText
+      );
 
-    // });
+      if (term) {
+        const filterNames = rName.filter((name) =>
+          name.toLowerCase().includes(term.toLowerCase())
+        );
+        const filterPhones = rPhone.filter((phone) =>
+          phone.toLowerCase().includes(term.toLowerCase())
+        );
+
+        console.log(filterNames);
+
+        orders.innerHTML = '';
+        getOrders().then((data) => {
+          data
+            .filter((i) => filterNames.includes(i.recipientName))
+            .map((i) => orderDisplay(i));
+        });
+      } else {
+        orders.innerHTML = '';
+        getOrders().then((data) => {
+          data.map((i) => orderDisplay(i));
+        });
+      }
+    }
   }
 
   getMe();
+
+  function orderDisplay(order) {
+    orders.innerHTML += `<tr><td class="no-display">${order._id}</td><td>${order.description}</td><td>${order.pickupLocation}</td><td>${order.destination}</td><td class="rName">${order.recipientName}</td><td class="rPhone">${order.phone}</td><td>${order.presentLocation}</td><td>${order.status}</td>
+                    <td class="text-center"><i class="fas fa-edit editOrder"></i></td><td class="text-center"><i class="far fa-trash-alt deleteOrder"></i></td></tr>`;
+  }
 
   //Change Destination
   const changeDestination = document.getElementById('change-destination');

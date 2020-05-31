@@ -449,8 +449,17 @@ input[type='tel']:valid + span:after {
   background-repeat: no-repeat;
 }
 
+.u-status select {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #666;
+}
+
 .filter input:focus,
-.filter select:focus {
+.filter select:focus,
+.u-status select:focus {
   outline: none;
   border-color: #666;
 }

@@ -1,130 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link
-            rel="stylesheet"
-            media="screen and (max-width: 768px)"
-            href="css/mobile.css"
-        />
-        <title>SendIT | Home Delivery</title>
-    </head>
-    <body>
-        <nav id="navbar">
-            <!-- Navbar -->
-            <h1 class="logo">Send<span class="it-logo">IT</span></h1>
-            <ul>
-                <li><a href="index.html" class="current">Home</a></li>
-                <li><a href="#aboutus">About Us</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <!-- Showcase -->
-        <header id="showcase">
-            <div class="showcase-content">
-                <h1 class="l-heading">Easy Home Delivery</h1>
-                <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Expedita perferendis officia architecto voluptate ipsam qui!
-                </p>
-                <a href="register.html" class="btn">Get Started</a>
-            </div>
-        </header>
-        <!-- About us -->
-        <section id="aboutus">
-            <div class="about-img"></div>
-            <div class="about-text p-2 bg-dark">
-                <h1 class="m-heading">
-                    <span class="text-primary">About</span> SendIT
-                </h1>
-                <p>
-                    SendIT is a courier service that helps users deliver parcels
-                    to different destinations. SendIT provides courier quotes
-                    based on weight categories.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reprehenderit, ipsa, odit qui magnam explicabo quidem
-                    facere, iste laboriosam expedita placeat tempore autem
-                    fugiat? Molestias quibusdam eum voluptatem reiciendis nisi
-                    adipisci deserunt, quaerat culpa, necessitatibus possimus
-                    odit et porro alias ab ex enim a quos! Cupiditate aspernatur
-                    ratione ad iste natus. Veniam, quos id? Eius doloremque
-                    natus quidem ex facilis autem sint voluptatibus amet quaerat
-                    ratione, dolores quod dolorum aliquid suscipit? Voluptatem
-                    culpa, nesciunt dolorem in hic modi consectetur tempora
-                    exercitationem! Cum quae impedit nesciunt et iste iusto
-                    natus rem numquam maiores nam veniam nihil, hic dolore
-                    explicabo libero eligendi recusandae!
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam tempore nostrum obcaecati, quidem molestiae,
-                    voluptatem soluta beatae fugiat vero ipsa ratione
-                    perspiciatis, animi delectus. Qui, optio culpa ea facere
-                    quod veniam numquam omnis laudantium expedita dolore
-                    praesentium ipsum iusto sed dicta distinctio cumque
-                    voluptatibus nisi, doloremque corporis officiis pariatur id.
-                </p>
-            </div>
-        </section>
-        <!-- contact -->
-        <section id="contact">
-            <div class="contact-form bg-primary p-2">
-                <h2 class="m-heading">Contact Us</h2>
-                <p>Please use the form below to contact us</p>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            placeholder="Enter Name"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="Enter Email"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input
-                            type="text"
-                            name="phone"
-                            id="phone"
-                            placeholder="Enter Phone Number"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea
-                            name="message"
-                            id="message"
-                            placeholder="Enter Message"
-                        ></textarea>
-                    </div>
-                    <button type="submit" class="send-btn">Send</button>
-                </form>
-            </div>
-            <div class="map"></div>
-        </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="css/mobile.css"
+    />
+    <title>SendIT | Home Delivery</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <!-- Navbar -->
+      <h1 class="logo">Send<span class="it-logo">IT</span></h1>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a id="log-in" href="login.html">Login</a></li>
+        <li><a id="dashboard" href="userProfile.html">Dashboard</a></li>
+        <li><a id="logout" href="#">Logout</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Showcase -->
+    <header id="showcase">
+      <div class="showcase-content">
+        <h1 class="l-heading">Easy Home Delivery</h1>
+        <p class="lead">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          perferendis officia architecto voluptate ipsam qui!
+        </p>
+        <a href="register.html" class="btn">Get Started</a>
+      </div>
+    </header>
+    <!-- About us -->
+    <section id="aboutus">
+      <div class="about-img"></div>
+      <div class="about-text p-2 bg-dark">
+        <h1 class="m-heading">
+          <span class="text-primary">About</span> SendIT
+        </h1>
+        <p>
+          SendIT is a courier service that helps users deliver parcels to
+          different destinations. SendIT provides courier quotes based on weight
+          categories.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Reprehenderit, ipsa, odit qui magnam explicabo quidem facere, iste
+          laboriosam expedita placeat tempore autem fugiat? Molestias quibusdam
+          eum voluptatem reiciendis nisi adipisci deserunt, quaerat culpa,
+          necessitatibus possimus odit et porro alias ab ex enim a quos!
+          Cupiditate aspernatur ratione ad iste natus. Veniam, quos id? Eius
+          doloremque natus quidem ex facilis autem sint voluptatibus amet
+          quaerat ratione, dolores quod dolorum aliquid suscipit? Voluptatem
+          culpa, nesciunt dolorem in hic modi consectetur tempora
+          exercitationem! Cum quae impedit nesciunt et iste iusto natus rem
+          numquam maiores nam veniam nihil, hic dolore explicabo libero eligendi
+          recusandae!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+          tempore nostrum obcaecati, quidem molestiae, voluptatem soluta beatae
+          fugiat vero ipsa ratione perspiciatis, animi delectus. Qui, optio
+          culpa ea facere quod veniam numquam omnis laudantium expedita dolore
+          praesentium ipsum iusto sed dicta distinctio cumque voluptatibus nisi,
+          doloremque corporis officiis pariatur id.
+        </p>
+      </div>
+    </section>
+    <!-- contact -->
+    <section id="contact">
+      <div class="contact-form bg-primary p-2">
+        <h2 class="m-heading">Contact Us</h2>
+        <p>Please use the form below to contact us</p>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter Name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Enter Phone Number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Enter Message"
+            ></textarea>
+          </div>
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </div>
+      <div class="map"></div>
+    </section>
 
-        <!-- footer -->
-        <footer id="main-footer" class="bg-dark text-center py-1">
-            <div class="container">
-                <p>Copyright &copy; 2020, SendIT, All Rights Reserved</p>
-            </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-        <script src="./js/main.js"></script>
-    </body>
+    <!-- footer -->
+    <footer id="main-footer" class="bg-dark text-center py-1">
+      <div class="container">
+        <p>Copyright &copy; 2020, SendIT, All Rights Reserved</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
